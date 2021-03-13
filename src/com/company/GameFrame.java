@@ -89,6 +89,9 @@ public class GameFrame extends JFrame implements ActionListener {
         if (count == 9){
             label.setText("Nobody wins");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (e.getSource()==resetButton){
             for (int i=0;i<=8;i++) {
@@ -98,7 +101,9 @@ public class GameFrame extends JFrame implements ActionListener {
             label.setText("Turn: O");
             label.setForeground(Color.black);
             turnO = true;
-
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(true);
+            }
             count=0;
         }
         // Rows - check who is the winner
@@ -111,6 +116,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[0].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (button[3].getText() == button[4].getText() && button[4].getText() == button[5].getText()
                 && button[5].getText().length() > 0){
@@ -121,6 +129,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[3].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (button[6].getText() == button[7].getText() && button[7].getText() == button[8].getText()
                 && button[8].getText().length() > 0){
@@ -131,6 +142,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[6].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         // Columns - check who is the winner
         if (button[0].getText() == button[3].getText() && button[3].getText() == button[6].getText()
@@ -142,6 +156,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[0].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (button[1].getText() == button[4].getText() && button[4].getText() == button[7].getText()
                 && button[7].getText().length() > 0){
@@ -152,6 +169,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[1].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (button[2].getText() == button[5].getText() && button[5].getText() == button[8].getText()
                 && button[8].getText().length() > 0){
@@ -162,6 +182,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[2].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         // Diagonals - check who is the winner
         if (button[0].getText() == button[4].getText() && button[4].getText() == button[8].getText()
@@ -173,6 +196,9 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[0].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
         if (button[2].getText() == button[4].getText() && button[4].getText() == button[6].getText()
                 && button[6].getText().length() > 0){
@@ -183,7 +209,11 @@ public class GameFrame extends JFrame implements ActionListener {
 
             label.setText(button[2].getText() + " wins :D !!");
             label.setForeground(Color.red);
+            for(int i=0;i<=8;i++){
+                button[i].setEnabled(false);
+            }
         }
+
     }
 }
 
