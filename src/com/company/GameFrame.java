@@ -62,19 +62,8 @@ public class GameFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         for (int i=0;i<=8;i++) {
-
-            // Rows - check winner
-            if (button[0].getText() == "X" && button[1].getText() == "X" && button[2].getText() == "X"){
-
-                button[0].setBackground(Color.GREEN);
-                button[1].setBackground(Color.GREEN);
-                button[2].setBackground(Color.GREEN);
-
-                label.setText(button[0].getText() + " wins :D !!");
-                label.setForeground(Color.red);
-                break;
-            }
             // Switch turn player
             if (turnO) {
                 if (e.getSource() == button[i]) {
@@ -109,7 +98,91 @@ public class GameFrame extends JFrame implements ActionListener {
             label.setText("Turn: O");
             label.setForeground(Color.black);
             turnO = true;
+
             count=0;
+        }
+        // Rows - check who is the winner
+        if (button[0].getText() == button[1].getText() && button[1].getText() == button[2].getText()
+                && button[2].getText().length() > 0){
+
+            button[0].setBackground(Color.GREEN);
+            button[1].setBackground(Color.GREEN);
+            button[2].setBackground(Color.GREEN);
+
+            label.setText(button[0].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        if (button[3].getText() == button[4].getText() && button[4].getText() == button[5].getText()
+                && button[5].getText().length() > 0){
+
+            button[3].setBackground(Color.GREEN);
+            button[4].setBackground(Color.GREEN);
+            button[5].setBackground(Color.GREEN);
+
+            label.setText(button[3].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        if (button[6].getText() == button[7].getText() && button[7].getText() == button[8].getText()
+                && button[8].getText().length() > 0){
+
+            button[6].setBackground(Color.GREEN);
+            button[7].setBackground(Color.GREEN);
+            button[8].setBackground(Color.GREEN);
+
+            label.setText(button[6].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        // Columns - check who is the winner
+        if (button[0].getText() == button[3].getText() && button[3].getText() == button[6].getText()
+                && button[6].getText().length() > 0){
+
+            button[0].setBackground(Color.GREEN);
+            button[3].setBackground(Color.GREEN);
+            button[6].setBackground(Color.GREEN);
+
+            label.setText(button[0].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        if (button[1].getText() == button[4].getText() && button[4].getText() == button[7].getText()
+                && button[7].getText().length() > 0){
+
+            button[1].setBackground(Color.GREEN);
+            button[4].setBackground(Color.GREEN);
+            button[7].setBackground(Color.GREEN);
+
+            label.setText(button[1].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        if (button[2].getText() == button[5].getText() && button[5].getText() == button[8].getText()
+                && button[8].getText().length() > 0){
+
+            button[2].setBackground(Color.GREEN);
+            button[5].setBackground(Color.GREEN);
+            button[8].setBackground(Color.GREEN);
+
+            label.setText(button[2].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        // Diagonals - check who is the winner
+        if (button[0].getText() == button[4].getText() && button[4].getText() == button[8].getText()
+                && button[8].getText().length() > 0){
+
+            button[0].setBackground(Color.GREEN);
+            button[4].setBackground(Color.GREEN);
+            button[8].setBackground(Color.GREEN);
+
+            label.setText(button[0].getText() + " wins :D !!");
+            label.setForeground(Color.red);
+        }
+        if (button[2].getText() == button[4].getText() && button[4].getText() == button[6].getText()
+                && button[6].getText().length() > 0){
+
+            button[2].setBackground(Color.GREEN);
+            button[4].setBackground(Color.GREEN);
+            button[6].setBackground(Color.GREEN);
+
+            label.setText(button[2].getText() + " wins :D !!");
+            label.setForeground(Color.red);
         }
     }
 }
